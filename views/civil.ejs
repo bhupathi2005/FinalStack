@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color: #191414;
+        color: #fff;
+        font-family: sans-serif;
+      }
+
+      .container {
+        width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #282828;
+      }
+
+      .logo {
+        display: block;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border-radius: 50%;
+        background-image: url("https://vishnu.edu.in/images/logobig.jpg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        margin: 10px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #1db954;
+        font-size: 16px;
+      }
+
+      a:hover {
+        color: #1ed760;
+      }
+    </style>
+    <title>CIVILS PDFs</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo"></div>
+      <div class="title">
+        <h1>Civil PDFs</h1>
+      </div>
+      <ul>
+        <% pdfs.forEach(function(pdf) { %>
+        <li><a href="<%= pdf %>" download>Download PDF</a></li>
+        <% }); %>
+      </ul>
+    </div>
+  </body>
+</html>

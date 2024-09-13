@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSE Resources</title>
+    <style>
+      body {
+        background-color: #191414;
+        color: #fff;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .card {
+        background-color: #282828;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 50%;
+        background-image: url("https://vishnu.edu.in/images/logobig.jpg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .button-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .button {
+        background-color: #1db954;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .button:hover {
+        background-color: #1ed760;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <!-- Logo -->
+        <div class="logo"></div>
+
+        <!-- Title -->
+        <h1 class="title">CSE Resources</h1>
+
+        <!-- Button Container -->
+        <div class="button-container">
+          <!-- Buttons for different sections -->
+          <% if (pdfUrl) { %>
+          <button
+            class="button"
+            onclick="window.open('<%= pdfUrl %>', '_blank')"
+          >
+            Download or View PDF
+          </button>
+          <% } else { %>
+          <button class="button" disabled>No PDF available</button>
+          <% } %> <% if (crudArray && crudArray.length > 0) { %>
+          <button
+            class="button"
+            onclick="window.open('<%= crudArray[0] %>', '_blank')"
+          >
+            View CRUD Item
+          </button>
+          <% } else { %>
+          <button class="button" disabled>No CRUD items available</button>
+          <% } %> <% if (nodejs && nodejs.length > 0) { %>
+          <button
+            class="button"
+            onclick="window.open('<%= nodejs[0] %>', '_blank')"
+          >
+            View Node.js Resource
+          </button>
+          <% } else { %>
+          <button class="button" disabled>
+            No Node.js resources available
+          </button>
+          <% } %> <% if (modelpaper && modelpaper.length > 0) { %>
+          <button
+            class="button"
+            onclick="window.open('<%= modelpaper[0] %>', '_blank')"
+          >
+            View Model Paper
+          </button>
+          <% } else { %>
+          <button class="button" disabled>No Model Papers available</button>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
